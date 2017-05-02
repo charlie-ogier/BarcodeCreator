@@ -1,0 +1,109 @@
+' Gambas class file
+
+Public Sub Form_Open()
+Dim sSetB As String[] = FMain.sExtrasSetB.Copy()                              'Store the 'Check' database taken from FMain
+Dim sChrs As String = FMain.sCode                                             'Store the barcode text e.g. Charlie
+Dim sExtras As String = FMain.sExtras                                         'Store the full barcode text e.g. ÌCharlieOÎ 
+Dim siCheck, siCount, siCol, siRow, siSize As Short                           'Counters etc
+Dim iCalc, iTotal As Integer                                                  'To hold parts of the 'Check bit' calculations
+
+Me.Width = Settings["BDWidth", 735]                                           'Get the last Form width or set as default
+Me.Height = Settings["BDHeight", 700]                                         'Get the last Form height or set as default
+Me.Center                                                                     'Center the Form
+
+With GridViewDetails                                                          'Change the properties of the GridView..
+  .Columns.count = 10                                                         'Create 10 Columns
+  .Rows.count = 5 + Len(sChrs)                                                'Create 5 Rows + the length of the input string
+  .[0, 0].text = "128B Start"                                                 'Add text
+  .[0, 1].text = "Ì"                                                          'Add text
+  .[0, 1].Font.Bold = True                                                    'Make text bold
+End With
+
+For siCount = 1 To Len(sChrs)                                                 'For each character in the barcode string..
+  iCalc = Asc(sChrs, siCount) - 32                                            'iCalc = ASCII value of the character less 32 (ASCII 32 is a space so if you subtract 32 a space = 0)
+  With GridViewDetails                                                        'Change the properties of the GridView..
+    .[siCount, 0].Text = "Character"                                          'Add text etc..
+    .[siCount, 0].Font.Bold = False
+    .[siCount, 1].Text = Mid(sChrs, siCount, 1)
+    .[siCount, 1].Font.Bold = True
+    .[siCount, 2].Text = "ASCII value ="
+    .[siCount, 2].Font.Bold = False
+    .[siCount, 3].Text = Asc(Mid(sChrs, siCount, 1))
+    .[siCount, 4].Text = "less 32 ="
+    .[siCount, 5].Text = Str(iCalc)
+    .[siCount, 6].Text = "multiplied by its position (" & Str(siCount) & ")="
+    .[siCount, 7].Text = Str((iCalc) * siCount) 
+  End With
+  iCalc *= siCount                                                           'Multiply iCalc by the Position the charater is in the string e.g. the 'e' in Charlie is 7
+  iTotal += iCalc                                                            'Add the calculation above to iTotal
+Next
+
+With GridViewDetails                                                         'Change the properties of the GridView..
+  .[siCount, 6].Text = "Total + 104 ="                                       'Add text etc..
+  .[siCount, 7].Text = Str(iTotal + 104)
+  .[siCount + 1, 6].Text = Str(iTotal + 104) & " Mod 103 ="
+  .[siCount + 1, 7].Text = Str((iTotal + 104) Mod 103)
+  .[siCount + 1, 8].Text = "Or  " & Str(iTotal + 104) & "-(INT(" & Str(iTotal + 104) & "/103)*103)"
+  .[siCount + 2, 0].Text = "Check symbol"
+  .[siCount + 2, 6].Text = "Character " & GridViewDetails[siCount + 1, 7].Text & " from the list below ="
+  .[siCount + 2, 1].Text = sSetB[Val(GridViewDetails[siCount + 1, 7].Text)]
+  .[siCount + 2, 7].Text = sSetB[Val(GridViewDetails[siCount + 1, 7].Text)]
+  .[siCount + 3, 0].Text = "128B End"
+  .[siCount + 3, 1].Text = "Î"
+  .[siCount + 3, 1].Font.Bold = True
+End With
+
+For siRow = 0 To GridViewDetails.Rows.Max                                     'Loop through all the created Rows
+  For siCol = 0 To GridViewDetails.Columns.Max                                'Loop through all the created Columns
+    If siCol = 1 Then Continue                                                'If Column '1' then skip it
+    GridViewDetails[siRow, siCol].Alignment = Align.Right                     'Make the cell Right Align
+  Next
+Next
+
+GridViewDetails[siCount + 2, 1].Font.Bold = True                              'Make the cell Bold
+GridViewDetails[siCount + 2, 2].Font.Bold = False                             'Make the cell NOT Bold
+GridViewDetails.Columns.Width = -1                                            'Auto adjust the width of all the Columns
+
+With GridViewSetB                                                             'Change the properties of the GridView for the 'Check symbol' database..
+  .Columns.count = 107                                                        'Create 107 Columns
+  .Rows.count = 2                                                             'Create 2 Rows
+End With
+
+siCheck = Val(GridViewDetails[siCount + 1, 7].Text)                           'Grab the 'Check bit' value from the GridView
+
+For siCount = 0 To 106                                                        'For each of the Columns in the 'Check symbol' database
+  GridViewSetB[0, siCount].text = Str(siCount)                                'In the top Row add a number from 0 to 106
+  GridViewSetB[0, siCount].Alignment = Align.Center                           'Centre align the text in the cell
+  GridViewSetB[1, siCount].text = sSetB[siCount]                              'Add the correct 'Check symbol' from the sSetB database to the lower Row
+  GridViewSetB[1, siCount].Alignment = Align.Center                           'Centre align the text in the cell
+  If siCheck = siCount Then                                                   'If the correct 'Check symbol' is in this cell then..
+    siSize = GridViewSetB[0, siCount].Font.size + 4                           'Set siSize to the font size + 4
+    GridViewSetB[0, siCount].Font.Bold = True                                 'Make the top cell Bold
+    GridViewSetB[0, siCount].Font.size = siSize                               'Make the font bigger
+    GridViewSetB[1, siCount].Font.Bold = True                                 'Make the bottom cell Bold
+    GridViewSetB[1, siCount].Font.size = siSize                               'Make the font bigger
+  Else                                                                        'If it is NOT the correct 'Check symbol' is in this cell then..
+    GridViewSetB[0, siCount].Font.Bold = False                                'Make the cell NOT Bold
+    GridViewSetB[1, siCount].Font.Bold = False                                'Make the cell NOT Bold
+  Endif
+Next
+
+LabelCode0.text = sExtras                                                     'Put the barcode text in the left label e.g.ÌCharlieOÎ
+LabelCode1.text = sExtras                                                     'Put the barcode text in the middle label e.g.ÌCharlieOÎ
+LabelCode1.Font = Font["code128"]                                             'Make the middle text display in code128 text
+LabelCode1.Font.Size = LabelCode0.Font.Size + 20                              'Increase the text size
+LabelCode2.text = sChrs                                                       'In the last label display the required result e.g. Charlie
+
+GridViewSetB.Columns.Width = 25                                               'Set the Column width of all the cells
+GridViewSetB.ScrollX = (siCheck * 25) - (GridViewSetB.Width / 2)              'Scroll the database so that the correct 'Check symbol' can be seen
+
+End
+
+Public Sub ButtonDone_Click()                                                 'When the 'Done' button is clicked..
+
+Settings["BDWidth"] = Me.Width                                                'Save the Form's width
+Settings["BDHeight"] = Me.Height                                              'Save the Form's height
+
+Me.Close                                                                      'Close the form
+
+End

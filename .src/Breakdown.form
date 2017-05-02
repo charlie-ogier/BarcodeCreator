@@ -1,0 +1,90 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,103,56)
+  Text = ("Breakdown & selecting the 'Check symbol'")
+  Icon = Picture["BarcodeLogo.png"]
+  Arrangement = Arrange.Vertical
+  Padding = 5
+  { GridViewDetails GridView
+    MoveScaled(0,0,45,16)
+    Expand = True
+  }
+  { HBox3 HBox
+    MoveScaled(1,16,43,4)
+    { LabelDesc Label
+      MoveScaled(9,1,27,3)
+      Font = Font["Bold,+1"]
+      Expand = True
+      Text = ("Check symbol database")
+      Alignment = Align.Bottom
+    }
+  }
+  { GridViewSetB GridView
+    MoveScaled(1,20,45,12)
+    ScrollBar = Scroll.Horizontal
+  }
+  { Separator2 Separator
+    MoveScaled(0,33,31,0.2857)
+    Background = Color.Black
+  }
+  { HBox2 HBox
+    MoveScaled(0,34,101,12)
+    { Separator3 Separator
+      MoveScaled(0.2857,0,0.2857,12)
+      Background = Color.Black
+    }
+    { LabelCode0 Label
+      MoveScaled(1,2,27,7)
+      Font = Font["Bold,+6"]
+      Expand = True
+      Alignment = Align.Center
+    }
+    { LabelCode3 Label
+      MoveScaled(27,2,7,7)
+      Font = Font["Bold,+6"]
+      Text = ("=")
+      Alignment = Align.Center
+    }
+    { LabelCode1 Label
+      MoveScaled(34,3,27,7)
+      Font = Font["Bold,+6"]
+      Expand = True
+      Alignment = Align.Center
+    }
+    { LabelCode4 Label
+      MoveScaled(62,2,7,7)
+      Font = Font["Bold,+6"]
+      Text = ("=")
+      Alignment = Align.Center
+    }
+    { LabelCode2 Label
+      MoveScaled(70,2,27,7)
+      Font = Font["Bold,+6"]
+      Expand = True
+      Alignment = Align.Center
+    }
+    { Separator4 Separator
+      MoveScaled(100,0,0.2857,12)
+      Background = Color.Black
+    }
+  }
+  { Separator1 Separator
+    MoveScaled(1,48,31,0.2857)
+    Background = Color.Black
+  }
+  { HBox1 HBox
+    MoveScaled(0,50,61,4.5714)
+    Padding = 2
+    { Panel1 Panel
+      MoveScaled(2,1,13,3)
+      Expand = True
+    }
+    { ButtonDone Button
+      MoveScaled(49,0,11,4)
+      ToolTip = ("Bye!")
+      Text = Shortcut(("Done"), "D")
+      Picture = Picture["icon:/22/apply"]
+    }
+  }
+}

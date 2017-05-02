@@ -1,0 +1,175 @@
+' Gambas class file
+
+'Published on the Gambas Farm 28/03/2016
+'16/02/17 Added to the comments and put all controls into one routine V0.1.1
+'28/02/17 Minor code changes including adding window size and position settings V0.1.2
+'27/04/17 Added barcode breakdown form and included an example spreadsheet and various other small changes V0.2.0
+
+Public sCode As String                                                        'A copy of the input text for the 'Breakdown' Form
+Public sExtras As String                                                      'A copy of the barcode text for the 'Breakdown' Form
+Public sExtrasSetB As New String[]                                            'A copy of the 128 SetB check sybole database for the 'Breakdown' Form
+
+Public Sub Form_Open()                                                        'What to do when the program starts
+
+Application.MainWindow = Me                                                   'This is the main form so if you leave the About form open when you close this form, both will close
+TextBoxInput.SetFocus                                                         'Put the cursor in the Input TextBox
+Settings.Read(Me.Window)                                                      'Read the last window size and position 
+LabelVersion.text = "Version 0.2.0"                                           'Display the program's version number
+
+End
+
+Public Sub TextBoxInput_Change()                                              'What to do when the Input TextBox contents change
+Dim sCheck, sOutput As String                                                 'Variables for storing the Checksum character and the completed output string
+Dim sValid As String                                                          'To store the list of characters allowed in the barcode
+Dim siCount As Short                                                          'Counter
+
+If Trim(TextBoxInput.Text) = "" Then                                          'If there no text to create a barcode then..
+  ButtonBreakdown.Enabled = False                                             'Disable the 'Breakdown' button
+Else                                                                          'Else
+  ButtonBreakdown.Enabled = True                                              'Enable the 'Breakdown' button
+End If
+
+For siCount = 32 To 126                                                       'Create the list of characters allowed in the barcode
+  sValid &= Chr(siCount)                                                      'Add to 'sValid' the ASCII characters
+Next
+
+For siCount = 1 To Len(TextBoxInput.Text)                                     'To check input text is valid
+  If InStr(sValid, Mid(TextBoxInput.Text, siCount, 1)) Then                   'If the character is in the permitted string then..
+    sOutput &= Mid(TextBoxInput.Text, siCount, 1)                             'Add it to sOutput
+  End If
+Next
+
+TextBoxInput.Text = sOutput                                                   'Put the permissable text back in the input TextBox
+
+FontSizeChange                                                                'Go to the Font Size Change routine
+
+If Len(TextBoxInput.Text) > 20 Then TextBoxInput.Text = Left(TextBoxInput.Text, 20) 'If too many characters are input, shorten the string
+sCheck = CheckSum(TextBoxInput.Text)                                          'Get the checksum character from the Checksum routine
+sOutput = "Ì" & TextBoxInput.Text & sCheck & "Î"                              'Build the 128B barcode string
+SizeWarning                                                                   'Displays a graphical warning regarding the size of the barcode
+
+If TextBoxInput.text Then                                                     'If there is some text to process then..
+  TextAreaOutput.text = sOutput                                               'Put the Output string in the main display window which displays the result in the 'code128' font
+  LabelOutput.text = sOutput                                                  'Put the full barcode text in a Label
+  sCode = Trim(TextBoxInput.text)                                             'Store the above for use in the 'Breakdown' Form
+  SeparatorMarker.Visible = True                                              'Show the line at the end of the graphical size warning display
+Else                                                                          'If there is no text to display then...
+  TextAreaOutput.text = ""                                                    'Empty the main display window
+  LabelOutput.text = ""                                                       'Clear the Label
+  ''sCode = sOutput                                                             '
+  SeparatorMarker.Visible = False                                             'Hide the line at the end of the graphical size warning display
+End If
+
+End
+
+Public Sub CheckSum(sInput As String) As String                               'To calculate the Checksum character
+Dim sAsciiExtensions As String[] = ["Ã", "Ä", "Å", "Æ", "Ç", "È", "É", "Ê", "Ë", "Ì", "Í", "Î"] 'Extended ASCII characters used in the 128B barcode checksum calculations
+Dim sSetB As New String[107]                                                  'To store all 107 ASCII characters used by the 128B barcode checksum calculations
+Dim siCount As Short                                                          'Counter
+Dim siCheck As Short = 104                                                    'To store the total checksum value
+Dim sResult As String                                                         'To store the single character result
+
+For siCount = 0 To 94                                                         'To generate the 1st 95 ASCII characters used by the 128B barcode
+  sSetB[siCount] = Chr(siCount + 32)                                          'Store the result in sSetB, sSetB[0]=" ",sSetB[1]="!",sSetB[2]=""",sSetB[3]="#" etc
+Next
+
+For siCount = 0 To 11                                                         'To generate the last of the ASCII characters used by the 128B barcode
+  sSetB[siCount + 95] = sAsciiExtensions[siCount]                             'Store the result in sSetB, sSetB[95]="Ã",sSetB[96]="Ä",sSetB[97]="Å",sSetB[98]="Æ" etc
+Next
+
+For siCount = 1 To Len(sInput)                                                'For each character in the barcode string..
+  siCheck += (Asc(sInput, siCount) - 32) * siCount                            'Add the ASCII value, less 32 and multiply by the position in the string then add to siCheck
+Next                                                                          'e.g. The barcode is to be 'AB'. siCheck = 104, the ASCII value of A = 65 less 32 = 33, multiplied by its position in the string (1) = 33
+                                                                              'The ASCII value of B = 63 less 32 = 34, multiplied by its position in the string (2) = 68 so siCheck= 104 + 33 + 68 = 205
+siCheck = siCheck Mod 103                                                     'The value of siCheck is now 205. We now want to MOD 103 this number to get the remainder
+                                                                              'As 205/103 only divides completely once the reminder is 205 - 103 = 102
+sResult = sSetB[siCheck]                                                      'The Checksum is the 102nd character in the sSetB list which in this case is "Ê"
+
+sExtrasSetB = sSetB.Copy()                                                    'Create a copy of the setB 'Check symbol' database for the 
+
+Return sResult                                                                'Return the result
+
+End
+
+Public Sub SizeWarning()                                                      'A graphical display of the length of the input string
+Dim siLen As Short                                                            'To store the length of the string
+
+siLen = Len(TextBoxInput.text)                                                'Store the length of the input string
+
+If siLen < 12 Then SeparatorSize.Background = Color.Green                     'If the length is less than 12 set the progress bar colour to green
+If siLen > 11 Then SeparatorSize.Background = Color.Yellow                    'If the length is greater than 11 set the progress bar colour to yellow
+If siLen > 14 Then SeparatorSize.Background = Color.Red                       'If the length is greater than 14 set the progress bar colour to red
+
+LabelCharacters.text = Str(siLen) & " characters"                             'Display the number of characters
+If siLen = 0 Then LabelCharacters.text = "No characters"                      'Display 'No charaters' is there are none
+If siLen = 1 Then LabelCharacters.text = "1 character"                        'Display '1 character' if there is only 1 charater
+
+SeparatorSize.Width = (siLen * (HBoxSize.Width / 100)) * 5                    'This sets the length of the 'separator' used to display the progress bar 
+If SeparatorSize.Width > HBoxSize.Width - 43 Then SeparatorSize.Width = HBoxSize.Width - 43 'Control the maximum length of the bar
+
+End
+
+Public Sub Form_Resize()                                                      'What to do if the Form is resized
+
+TextBoxInput_Change                                                           'Call the TextBoxInput_Change routine
+
+End
+
+Public Sub FontSizeChange()                                                   'Checks and changes the font size of the displayed barcode
+Dim fHBoxW As Float                                                           'To store the width of the HBox that contains the displayed barcode
+
+fHBoxW = TextAreaOutput.Width                                                 'Store the width of the HBox that contains the displayed barcode
+
+fHBoxW = (fHBoxW - 50) / 9                                                    'Use a conservative calculation
+If fHBoxW < 5 Then fHBoxW = 5                                                 'Control the minimum font size
+
+TextAreaOutput.Font.Size = fHBoxW                                             'Apply the calculated font size
+
+End
+
+Public Sub Form_Close()                                                       'What to do when the form is closed (More use may be made of this in later versions)
+
+Settings.Write(Me.Window)                                                     'Save window size And position
+Me.Close                                                                      'Close the form
+
+End
+
+Public Sub AllButtons_Click()
+Dim sLastButton As String = Last.name                                         'Stores the name of the last button clicked
+Dim siAnswer As Short                                                         'To store the answer result
+
+Select Case Last.Name                                                         'Select what to do by the Name of the Last button clicked
+  Case "ButtonClear"                                                          'If the 'Clear' button is clicked
+    TextBoxInput.text = ""                                                    'Empty the input TextBox
+    TextBoxInput.SetFocus                                                     'Make sure the prompt is in the Input TextBox
+  Case "ToolButtonExit"                                                       'If the 'Exit' button is clicked
+    Form_Close                                                                'Go to the Form_Close routine
+  Case "ToolButtonAbout"                                                      'If the 'About' button is clicked
+    About.Show                                                                'Show the 'About' form
+  Case "ToolButtonBarCode"                                                    'If the 'BarCode' button is clicked
+    Try Copy "code128.ttf" To User.home &/ "code128.ttf"                      'Copy the code128 font to the Home folder
+    siAnswer = Message.Question("This will help you install the 'code128' font, the program will close and will need to be restarted after installation", "Cancel", "Continue") 'Do you want to continue?
+    If siAnswer = 2 Then                                                      'If yes then pop up the next message
+      Message.Info("When you click 'Next' an external program should launch and offer you the opportunity to install the 'code128' font.\nIf you run into difficulties you will find the font in your Home folder\n" & 
+      "Use the font tools from your ditribution to install the font", "Next")
+      Desktop.Open(User.Home &/ "code128.ttf")                                'Try to get Linux to open the correct program to install fonts. This works in Mint 17.3 Cinnamnon but not 18?
+      Me.Close                                                                'Close the program
+    End If
+  Case "ButtonCopy"                                                           'If the 'Copy' button is clicked
+    Clipboard.Copy(TextAreaOutput.text)                                       'Copy the barcode text to the clipboard
+  Case "ButtonBreakdown"                                                      'If the 'Breakdown' button is clicked
+    sExtras = TextAreaOutput.Text                                             'Store the barcode text in sExtras
+    Me.Hide                                                                   'Hide this Form
+    Breakdown.ShowModal                                                       'Show the 'Breakdown' Form
+    Me.Show                                                                   'Show this Form
+    Wait 0.1                                                                  'Wait for it....!
+    TextBoxInput_Change                                                       'Rejuvenate the barcode display
+  Case "ButtonSheet"                                                          'If the 'Sheet' button is clicked
+    If Not Exist(User.Home &/ "BarcodeSpreadsheet.ods") Then                  'If the spreadsheet does not exist in the Home folder then..
+      Copy "../BarcodeSpreadsheet.ods" To User.Home &/
+        "BarcodeSpreadsheet.ods"                                              'Copy the spreadsheet from the program folder to the Home folder
+    Endif
+    Desktop.Open(User.Home &/ "BarcodeSpreadsheet.ods")                       'Open the spreadsheet
+End Select
+
+End
