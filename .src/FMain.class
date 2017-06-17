@@ -46,6 +46,7 @@ FontSizeChange                                                                'G
 If Len(TextBoxInput.Text) > 20 Then TextBoxInput.Text = Left(TextBoxInput.Text, 20) 'If too many characters are input, shorten the string
 sCheck = CheckSum(TextBoxInput.Text)                                          'Get the checksum character from the Checksum routine
 sOutput = "Ì" & TextBoxInput.Text & sCheck & "Î"                              'Build the 128B barcode string
+'Ë, Ì, Í Code 128 A, B & C
 SizeWarning                                                                   'Displays a graphical warning regarding the size of the barcode
 
 If TextBoxInput.text Then                                                     'If there is some text to process then..
