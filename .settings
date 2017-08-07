@@ -19,7 +19,7 @@ Path="BarcodeCreator.gambas"
 [OpenFile]
 Count=2
 File[1]=".src/FMain.form"
-Active=2
+Active=1
 File[2]=".src/FMain.class:14.48"
 
 [Watches]

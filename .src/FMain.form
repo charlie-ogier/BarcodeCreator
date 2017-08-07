@@ -142,7 +142,6 @@
     }
     { Panel5 Panel
       MoveScaled(18,2,1,3)
-      Expand = True
     }
     { ButtonSheet Button AllButtons
       Name = "ButtonSheet"
@@ -153,7 +152,6 @@
     }
     { Panel11 Panel
       MoveScaled(35,1,1,3)
-      Expand = True
     }
     { ButtonBreakdown Button AllButtons
       Name = "ButtonBreakdown"
@@ -161,6 +159,10 @@
       ToolTip = ("Extra details")
       Text = Shortcut(("Breakdown"), "B")
       Picture = Picture["icon:/22/add"]
+    }
+    { Panel13 Panel
+      MoveScaled(55,1,4,2)
+      Expand = True
     }
   }
 }
