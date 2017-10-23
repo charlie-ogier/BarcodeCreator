@@ -1,0 +1,359 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"#-#-#-#-#  #project.pot (BarcodeCreator 3.10.0)  #-#-#-#-#\n"
+"Project-Id-Version: BarcodeCreator 3.10.0\n"
+"POT-Creation-Date: 2017-10-23 16:58 UTC\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"#-#-#-#-#  About.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
+"Project-Id-Version: $(PACKAGE) $(VERSION)\n"
+"POT-Creation-Date: 2017-10-23 16:45 UTC\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"#-#-#-#-#  Breakdown.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
+"Project-Id-Version: $(PACKAGE) $(VERSION)\n"
+"POT-Creation-Date: 2017-10-23 12:47 UTC\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"#-#-#-#-#  FMain.pot ($(PACKAGE) $(VERSION))  #-#-#-#-#\n"
+"Project-Id-Version: $(PACKAGE) $(VERSION)\n"
+"POT-Creation-Date: 2017-10-23 12:35 UTC\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .project:1
+msgid "BarcodeCreator"
+msgstr ""
+
+#: .project:2
+msgid ""
+"Create 128B barcodes, copy the results to a Word Processor or Spreadsheet to "
+"print them out. You can read them with a barcode gun or a smart phone.\n"
+"\n"
+"The font required is supplied with the program\n"
+"UPDATED: -\n"
+"Now with an extra 'explanation' form and sample spreadsheet"
+msgstr ""
+
+#: About.form:40
+msgid ""
+"This program requires that the font 'code128' be installed. Click on the "
+"'Install Barcode Font' tool bar button to install this font.<p>\n"
+"The font is also available from http://grandzebu.net/informatique/codbar-en/"
+"codbar.htm (English) and is included in this program's folder.<p>\n"
+"Grand Zebu, the author says \"I will provide you all the software parts... "
+"free as usual.!\". Thanks to Grand for this. The font is released under GNU "
+"General Public License.<p>\n"
+"\n"
+"Please send any comments or bugs to bugs@cogier.com<p>\n"
+"\n"
+"BarcodeCreator<br>\n"
+"Copyright (C) Charlie Ogier 2016 <p>\n"
+"\n"
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version.<p>\n"
+"\n"
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See theGNU General Public License for "
+"more details.<p>\n"
+"\n"
+"A copy of the GNU General Public License is available from the Free Software "
+"Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA\n"
+msgstr ""
+
+#: About.form:54 Breakdown.form:122
+msgid "Done"
+msgstr ""
+
+#: About.class:17
+msgid ""
+"This program allows you to create 128B barcodes upto 20 characters, the "
+"longer the code the harder it is to read.<br>"
+msgstr ""
+
+#: About.class:17
+msgid "The barcode font size will change If the form is resized. <br> "
+msgstr ""
+
+#: About.class:17
+msgid "You need to install the 'code128' font - See below<br>"
+msgstr ""
+
+#: About.class:17
+msgid "Permitted charaters, including spaces, are: - <br>"
+msgstr ""
+
+#: About.class:17
+msgid ""
+"!\"#$%&'()*+,-./0123456789:;<=>?"
+"@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~<br>"
+msgstr ""
+
+#: About.class:17
+msgid ""
+"The barcode text can be copied to the Clipboard and then pasted into a Word "
+"Processor or Spreadsheet program as Text."
+msgstr ""
+
+#: About.class:17
+msgid ""
+" e.g. In LibreOffice Calc once the text is Pasted in a cell change the font "
+"to 'code128' increase the font size to about 36,"
+msgstr ""
+
+#: About.class:17
+msgid ""
+" resize the cell and centre the contents. You can then print out your code."
+"<p>"
+msgstr ""
+
+#: About.class:17
+msgid ""
+"Example code For your Widget store 'K01P1725FFF'. The K will tell your "
+"Gambas program that it should expect a code of 11 characters,"
+msgstr ""
+
+#: About.class:17
+msgid ""
+" 01 is the location in the store where the item is stored, 'P1725' is the "
+"part number and 'FFF' is a hex number of the quantity."
+msgstr ""
+
+#: About.class:17
+msgid ""
+" The actual barcode will have 'Start', 'End' and 'Check symbol' characters "
+"so will be written as 'ÌK01P1725FFF3Î' but read as 'K01P1725FFF'."
+msgstr ""
+
+#: About.class:17
+msgid ""
+" So using a Calc formula ' = Mid(B8, 3, 2) & ' - ' & Mid(B8, 5, 5) & ' - Qty "
+"' & HEX2DEC(Mid(A4, Len(B8) - 4, 3))' the following result can be created."
+msgstr ""
+
+#: About.class:17
+msgid " See the spreadsheet by clicking the 'Sheet' button on the main Form."
+msgstr ""
+
+#: About.class:27
+msgid ""
+"This program requires that the font 'code128' be installed. Click on the "
+"'Install Barcode Font' tool bar button to install this font.<p>"
+msgstr ""
+
+#: About.class:27
+msgid ""
+"The font is also available from http://grandzebu.net/informatique/codbar-en/"
+"codbar.htm (English) and is included in this program's folder.<p>"
+msgstr ""
+
+#: About.class:27
+msgid ""
+"Grand Zebu, the author says 'I will provide you all the software parts..."
+"free As Usual!'. Thanks to Grand for this. The font is released under GNU "
+"General Public License.<p>"
+msgstr ""
+
+#: About.class:27
+msgid "Please send any comments or bugs to bugs@cogier.com<p>"
+msgstr ""
+
+#: About.class:27
+msgid "BarcodeCreator<br>"
+msgstr ""
+
+#: About.class:27
+msgid "Copyright (C) Charlie Ogier 2016 <p>"
+msgstr ""
+
+#: About.class:27
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or ('(at your "
+"option)any later version. <p>"
+msgstr ""
+
+#: About.class:27
+msgid ""
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See theGNU General Public License for "
+"more details.<p>"
+msgstr ""
+
+#: About.class:27
+msgid ""
+"A copy of the GNU General Public License is available from the Free Software "
+"Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA"
+msgstr ""
+
+#: Breakdown.form:24
+msgid "Breakdown & selecting the 'Check symbol'"
+msgstr ""
+
+#: Breakdown.form:41
+msgid "Check symbol database"
+msgstr ""
+
+#: Breakdown.form:74
+msgid "="
+msgstr ""
+
+#: Breakdown.form:121
+msgid "Bye!"
+msgstr ""
+
+#: Breakdown.class:17
+msgid "128B Start"
+msgstr ""
+
+#: Breakdown.class:25
+msgid "Character"
+msgstr ""
+
+#: Breakdown.class:29
+msgid "ASCII value ="
+msgstr ""
+
+#: Breakdown.class:32
+msgid "less 32 ="
+msgstr ""
+
+#: Breakdown.class:34
+msgid "multiplied by its position ("
+msgstr ""
+
+#: Breakdown.class:42
+msgid "Total + 104 ="
+msgstr ""
+
+#: Breakdown.class:44
+msgid " Mod 103 ="
+msgstr ""
+
+#: Breakdown.class:46
+msgid "Or  "
+msgstr ""
+
+#: Breakdown.class:47
+msgid "Check symbol"
+msgstr ""
+
+#: Breakdown.class:48
+msgid "Character "
+msgstr ""
+
+#: Breakdown.class:48
+msgid " from the list below ="
+msgstr ""
+
+#: Breakdown.class:51
+msgid "128B End"
+msgstr ""
+
+#: FMain.form:42
+msgid "128B BarcodeCreator"
+msgstr ""
+
+#: FMain.form:53
+msgid "Exit the program"
+msgstr ""
+
+#: FMain.form:60
+msgid "Help and About"
+msgstr ""
+
+#: FMain.form:72
+msgid "Install Barcode Font"
+msgstr ""
+
+#: FMain.form:88
+msgid "Enter the text for your barcode"
+msgstr ""
+
+#: FMain.form:106
+msgid ""
+"Permitted charaters, including spaces, are: -\n"
+"!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNO\n"
+"PQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
+msgstr ""
+
+#: FMain.form:117
+msgid "Clear"
+msgstr ""
+
+#: FMain.form:206
+msgid "Copy the barcode text to the clipboard"
+msgstr ""
+
+#: FMain.form:207
+msgid "Copy"
+msgstr ""
+
+#: FMain.form:218
+msgid ""
+"Open a example \n"
+"barcode spreadsheet"
+msgstr ""
+
+#: FMain.form:219
+msgid "Sheet"
+msgstr ""
+
+#: FMain.form:230
+msgid "Extra details"
+msgstr ""
+
+#: FMain.form:231
+msgid "Breakdown"
+msgstr ""
+
+#: FMain.class:103
+msgid " characters"
+msgstr ""
+
+#: FMain.class:104
+msgid "No characters"
+msgstr ""
+
+#: FMain.class:105
+msgid "1 character"
+msgstr ""
+
+#: FMain.class:150
+msgid ""
+"This will help you install the 'code128' font, the program will close and "
+"will need to be restarted after installation"
+msgstr ""
+
+#: FMain.class:150
+msgid "Cancel"
+msgstr ""
+
+#: FMain.class:150
+msgid "Continue"
+msgstr ""
+
+#: FMain.class:153
+msgid ""
+"When you click 'Next' an external program should launch and offer you the "
+"opportunity to install the 'code128' font.\n"
+"If you run into difficulties you will find the font in your Home folder\n"
+msgstr ""
+
+#: FMain.class:153
+msgid "Use the font tools from your ditribution to install the font"
+msgstr ""
+
+#: FMain.class:153
+msgid "Next"
+msgstr ""

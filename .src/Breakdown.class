@@ -14,7 +14,7 @@ Me.Center                                                                     'C
 With GridViewDetails                                                          'Change the properties of the GridView..
   .Columns.count = 10                                                         'Create 10 Columns
   .Rows.count = 5 + Len(sChrs)                                                'Create 5 Rows + the length of the input string
-  .[0, 0].text = "128B Start"                                                 'Add text
+  .[0, 0].text = ("128B Start")                                               'Add text
   .[0, 1].text = "Ì"                                                          'Add text
   .[0, 1].Font.Bold = True                                                    'Make text bold
 End With
@@ -22,16 +22,16 @@ End With
 For siCount = 1 To Len(sChrs)                                                 'For each character in the barcode string..
   iCalc = Asc(sChrs, siCount) - 32                                            'iCalc = ASCII value of the character less 32 (ASCII 32 is a space so if you subtract 32 a space = 0)
   With GridViewDetails                                                        'Change the properties of the GridView..
-    .[siCount, 0].Text = "Character"                                          'Add text etc..
+    .[siCount, 0].Text = ("Character")                                        'Add text etc..
     .[siCount, 0].Font.Bold = False
     .[siCount, 1].Text = Mid(sChrs, siCount, 1)
     .[siCount, 1].Font.Bold = True
-    .[siCount, 2].Text = "ASCII value ="
+    .[siCount, 2].Text = ("ASCII value =")
     .[siCount, 2].Font.Bold = False
     .[siCount, 3].Text = Asc(Mid(sChrs, siCount, 1))
-    .[siCount, 4].Text = "less 32 ="
+    .[siCount, 4].Text = ("less 32 =")
     .[siCount, 5].Text = Str(iCalc)
-    .[siCount, 6].Text = "multiplied by its position (" & Str(siCount) & ")="
+    .[siCount, 6].Text = ("multiplied by its position (") & Str(siCount) & ")="
     .[siCount, 7].Text = Str((iCalc) * siCount) 
   End With
   iCalc *= siCount                                                           'Multiply iCalc by the Position the charater is in the string e.g. the 'e' in Charlie is 7
@@ -39,16 +39,16 @@ For siCount = 1 To Len(sChrs)                                                 'F
 Next
 
 With GridViewDetails                                                         'Change the properties of the GridView..
-  .[siCount, 6].Text = "Total + 104 ="                                       'Add text etc..
+  .[siCount, 6].Text = ("Total + 104 =")                                     'Add text etc..
   .[siCount, 7].Text = Str(iTotal + 104)
-  .[siCount + 1, 6].Text = Str(iTotal + 104) & " Mod 103 ="
+  .[siCount + 1, 6].Text = Str(iTotal + 104) & (" Mod 103 =")
   .[siCount + 1, 7].Text = Str((iTotal + 104) Mod 103)
-  .[siCount + 1, 8].Text = "Or  " & Str(iTotal + 104) & "-(INT(" & Str(iTotal + 104) & "/103)*103)"
-  .[siCount + 2, 0].Text = "Check symbol"
-  .[siCount + 2, 6].Text = "Character " & GridViewDetails[siCount + 1, 7].Text & " from the list below ="
+  .[siCount + 1, 8].Text = ("Or  ") & Str(iTotal + 104) & "-(INT(" & Str(iTotal + 104) & "/103)*103)"
+  .[siCount + 2, 0].Text = ("Check symbol")
+  .[siCount + 2, 6].Text = ("Character ") & GridViewDetails[siCount + 1, 7].Text & (" from the list below =")
   .[siCount + 2, 1].Text = sSetB[Val(GridViewDetails[siCount + 1, 7].Text)]
   .[siCount + 2, 7].Text = sSetB[Val(GridViewDetails[siCount + 1, 7].Text)]
-  .[siCount + 3, 0].Text = "128B End"
+  .[siCount + 3, 0].Text = ("128B End")
   .[siCount + 3, 1].Text = "Î"
   .[siCount + 3, 1].Font.Bold = True
 End With

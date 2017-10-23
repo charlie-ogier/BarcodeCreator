@@ -17,10 +17,14 @@ Geometry=[1340,56,468,780]
 Path="BarcodeCreator.gambas"
 
 [OpenFile]
-Count=2
+Count=6
 File[1]=".src/FMain.form"
-Active=1
-File[2]=".src/FMain.class:14.48"
+Active=6
+File[2]=".src/FMain.class:0.137"
+File[3]=".src/About.form"
+File[4]=".src/Breakdown.form"
+File[5]=".src/Breakdown.class:19.0"
+File[6]=".src/About.class:7.10"
 
 [Watches]
 Count=0

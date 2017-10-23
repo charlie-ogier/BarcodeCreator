@@ -46,7 +46,7 @@ FontSizeChange                                                                'G
 If Len(TextBoxInput.Text) > 20 Then TextBoxInput.Text = Left(TextBoxInput.Text, 20) 'If too many characters are input, shorten the string
 sCheck = CheckSum(TextBoxInput.Text)                                          'Get the checksum character from the Checksum routine
 sOutput = "Ì" & TextBoxInput.Text & sCheck & "Î"                              'Build the 128B barcode string
-'Ë, Ì, Í Code 128 A, B & C
+
 SizeWarning                                                                   'Displays a graphical warning regarding the size of the barcode
 
 If TextBoxInput.text Then                                                     'If there is some text to process then..
@@ -57,7 +57,6 @@ If TextBoxInput.text Then                                                     'I
 Else                                                                          'If there is no text to display then...
   TextAreaOutput.text = ""                                                    'Empty the main display window
   LabelOutput.text = ""                                                       'Clear the Label
-  ''sCode = sOutput                                                             '
   SeparatorMarker.Visible = False                                             'Hide the line at the end of the graphical size warning display
 End If
 
@@ -101,9 +100,9 @@ If siLen < 12 Then SeparatorSize.Background = Color.Green                     'I
 If siLen > 11 Then SeparatorSize.Background = Color.Yellow                    'If the length is greater than 11 set the progress bar colour to yellow
 If siLen > 14 Then SeparatorSize.Background = Color.Red                       'If the length is greater than 14 set the progress bar colour to red
 
-LabelCharacters.text = Str(siLen) & " characters"                             'Display the number of characters
-If siLen = 0 Then LabelCharacters.text = "No characters"                      'Display 'No charaters' is there are none
-If siLen = 1 Then LabelCharacters.text = "1 character"                        'Display '1 character' if there is only 1 charater
+LabelCharacters.text = Str(siLen) & (" characters")                           'Display the number of characters
+If siLen = 0 Then LabelCharacters.text = ("No characters")                    'Display 'No charaters' is there are none
+If siLen = 1 Then LabelCharacters.text = ("1 character")                      'Display '1 character' if there is only 1 charater
 
 SeparatorSize.Width = (siLen * (HBoxSize.Width / 100)) * 5                    'This sets the length of the 'separator' used to display the progress bar 
 If SeparatorSize.Width > HBoxSize.Width - 43 Then SeparatorSize.Width = HBoxSize.Width - 43 'Control the maximum length of the bar
@@ -136,7 +135,6 @@ Me.Close                                                                      'C
 End
 
 Public Sub AllButtons_Click()
-Dim sLastButton As String = Last.name                                         'Stores the name of the last button clicked
 Dim siAnswer As Short                                                         'To store the answer result
 
 Select Case Last.Name                                                         'Select what to do by the Name of the Last button clicked
@@ -149,10 +147,10 @@ Select Case Last.Name                                                         'S
     About.Show                                                                'Show the 'About' form
   Case "ToolButtonBarCode"                                                    'If the 'BarCode' button is clicked
     Try Copy "code128.ttf" To User.home &/ "code128.ttf"                      'Copy the code128 font to the Home folder
-    siAnswer = Message.Question("This will help you install the 'code128' font, the program will close and will need to be restarted after installation", "Cancel", "Continue") 'Do you want to continue?
+    siAnswer = Message.Question(("This will help you install the 'code128' font, the program will close and will need to be restarted after installation"), ("Cancel"), ("Continue")) 'Do you want to continue?
     If siAnswer = 2 Then                                                      'If yes then pop up the next message
-      Message.Info("When you click 'Next' an external program should launch and offer you the opportunity to install the 'code128' font.\nIf you run into difficulties you will find the font in your Home folder\n" & 
-      "Use the font tools from your ditribution to install the font", "Next")
+      Message.Info(("When you click 'Next' an external program should launch and offer you the opportunity to install the 'code128' font.\nIf you run into difficulties you will find the font in your Home folder\n") & 
+      ("Use the font tools from your ditribution to install the font"), ("Next"))
       Desktop.Open(User.Home &/ "code128.ttf")                                'Try to get Linux to open the correct program to install fonts. This works in Mint 17.3 Cinnamnon but not 18?
       Me.Close                                                                'Close the program
     End If

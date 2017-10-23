@@ -9,7 +9,6 @@
     MoveScaled(0,0,147,29)
     Background = Color.LightGray
     AutoResize = True
-    Text = ("This program allows you to create 128B barcodes upto 20 characters, the longer the code the harder it is to read.<br>\nThe barcode font size will change if the form is resized.<br>\nYou need to install the 'code128' font - See below<br>\nPermitted charaters, including spaces, are: -<br>\n!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~<br>\nThe barcode text can be copied to the Clipboard and then pasted into a Word Processor or Spreadsheet program as text. e.g. In LibreOffice Calc once the text is pasted in a cell change the font to 'code128' increase the font size to about 36, resize the cell and centre the contents. You can then print out your code.<p> \n\nExample code for your Widget store \"K01P1725FFF\". The K will tell your Gambas program that it should expect a code of 11 characters, 01 is the location in the store where the item is stored, 'P1725' is the part number and 'FFF' is a hex number of the quantity. The actual barcode will have 'Start', 'End' and 'Check symbol'  characters so will be written as 'ÌK01P1725FFF3Î' but read as 'K01P1725FFF'. So using a Calc formula \"=MID(B8,3,2) & \" - \" & MID(B8,5,5) & \" - Qty \" & HEX2DEC(MID(A4,LEN(B8)-4,3))\" the following result can be created. See the spreadsheet by clicking the 'Sheet' button on the main Form.")
   }
   { Panel2 HBox
     MoveScaled(0,29,79,23)

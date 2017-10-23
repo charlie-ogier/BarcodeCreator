@@ -1,5 +1,32 @@
 ' Gambas class file
 
+Public Sub Form_Open()
+
+TextLabel1.text = ("This program allows you to create 128B barcodes upto 20 characters, the longer the code the harder it is to read.<br>") &
+("The barcode font size will change If the form is resized. <br> ") &
+("You need to install the 'code128' font - See below<br>") &
+("Permitted charaters, including spaces, are: - <br>") &
+("!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~<br>") & 
+("The barcode text can be copied to the Clipboard and then pasted into a Word Processor or Spreadsheet program as Text.") &
+(" e.g. In LibreOffice Calc once the text is Pasted in a cell change the font to 'code128' increase the font size to about 36,") &
+(" resize the cell and centre the contents. You can then print out your code.<p>") &
+("Example code For your Widget store 'K01P1725FFF'. The K will tell your Gambas program that it should expect a code of 11 characters,") &
+(" 01 is the location in the store where the item is stored, 'P1725' is the part number and 'FFF' is a hex number of the quantity.") & 
+(" The actual barcode will have 'Start', 'End' and 'Check symbol' characters so will be written as 'ÌK01P1725FFF3Î' but read as 'K01P1725FFF'.") & 
+(" So using a Calc formula ' = Mid(B8, 3, 2) & ' - ' & Mid(B8, 5, 5) & ' - Qty ' & HEX2DEC(Mid(A4, Len(B8) - 4, 3))' the following result can be created.") &
+(" See the spreadsheet by clicking the 'Sheet' button on the main Form.")
+
+TextLabel2.text = ("This program requires that the font 'code128' be installed. Click on the 'Install Barcode Font' tool bar button to install this font.<p>") &
+("The font is also available from http://grandzebu.net/informatique/codbar-en/codbar.htm (English) and is included in this program's folder.<p>") &
+("Grand Zebu, the author says 'I will provide you all the software parts...free As Usual!'. Thanks to Grand for this. The font is released under GNU General Public License.<p>") &
+("Please send any comments or bugs to bugs@cogier.com<p>") &
+("BarcodeCreator<br>") &
+("Copyright (C) Charlie Ogier 2016 <p>") &
+("This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or ('(at your option)any later version. <p>") & 
+("This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See theGNU General Public License for more details.<p>") &
+("A copy of the GNU General Public License is available from the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA")
+
+End
 
 Public Sub ButtonDone_Click()                                                 'What to do when the Done button is clicked
 
