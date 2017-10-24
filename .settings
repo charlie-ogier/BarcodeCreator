@@ -20,11 +20,11 @@ Path="BarcodeCreator.gambas"
 Count=6
 File[1]=".src/FMain.form"
 Active=6
-File[2]=".src/FMain.class:0.137"
+File[2]=".src/FMain.class:40.2"
 File[3]=".src/About.form"
 File[4]=".src/Breakdown.form"
-File[5]=".src/Breakdown.class:19.0"
-File[6]=".src/About.class:7.10"
+File[5]=".src/Breakdown.class:0.14"
+File[6]=".src/About.class:56.4"
 
 [Watches]
 Count=0

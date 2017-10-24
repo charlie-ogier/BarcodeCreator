@@ -4,6 +4,7 @@
 '16/02/17 Added to the comments and put all controls into one routine V0.1.1
 '28/02/17 Minor code changes including adding window size and position settings V0.1.2
 '27/04/17 Added barcode breakdown form and included an example spreadsheet and various other small changes V0.2.0
+'24/10/17 Translated into French V0.3.0 
 
 Public sCode As String                                                        'A copy of the input text for the 'Breakdown' Form
 Public sExtras As String                                                      'A copy of the barcode text for the 'Breakdown' Form
@@ -14,7 +15,7 @@ Public Sub Form_Open()                                                        'W
 Application.MainWindow = Me                                                   'This is the main form so if you leave the About form open when you close this form, both will close
 TextBoxInput.SetFocus                                                         'Put the cursor in the Input TextBox
 Settings.Read(Me.Window)                                                      'Read the last window size and position 
-LabelVersion.text = "Version 0.2.0"                                           'Display the program's version number
+LabelVersion.text = "Version 0.3.0"                                           'Display the program's version number
 
 End
 

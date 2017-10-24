@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2017-10-23 12:35 UTC\n"
+"POT-Creation-Date: 2017-10-24 12:35 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -62,39 +62,39 @@ msgstr ""
 msgid "Breakdown"
 msgstr ""
 
-#: FMain.class:103
+#: FMain.class:104
 msgid " characters"
 msgstr ""
 
-#: FMain.class:104
+#: FMain.class:105
 msgid "No characters"
 msgstr ""
 
-#: FMain.class:105
+#: FMain.class:106
 msgid "1 character"
 msgstr ""
 
-#: FMain.class:150
+#: FMain.class:151
 msgid "This will help you install the 'code128' font, the program will close and will need to be restarted after installation"
 msgstr ""
 
-#: FMain.class:150
+#: FMain.class:151
 msgid "Cancel"
 msgstr ""
 
-#: FMain.class:150
+#: FMain.class:151
 msgid "Continue"
 msgstr ""
 
-#: FMain.class:153
+#: FMain.class:154
 msgid "When you click 'Next' an external program should launch and offer you the opportunity to install the 'code128' font.\nIf you run into difficulties you will find the font in your Home folder\n"
 msgstr ""
 
-#: FMain.class:153
+#: FMain.class:154
 msgid "Use the font tools from your ditribution to install the font"
 msgstr ""
 
-#: FMain.class:153
+#: FMain.class:154
 msgid "Next"
 msgstr ""
 

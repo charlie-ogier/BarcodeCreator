@@ -64,7 +64,7 @@
     { ButtonClear Button AllButtons
       Name = "ButtonClear"
       MoveScaled(12,0,11,4)
-      Text = Shortcut(("Clear"), "a")
+      Text = Shortcut(("Clear"), "e")
       Picture = Picture["icon:/22/clear"]
     }
   }
@@ -135,7 +135,7 @@
     Padding = 2
     { ButtonCopy Button AllButtons
       Name = "ButtonCopy"
-      MoveScaled(0,1,16,4)
+      MoveScaled(1,0,16,4)
       ToolTip = ("Copy the barcode text to the clipboard")
       Text = Shortcut(("Copy"), "C")
       Picture = Picture["icon:/22/copy"]
@@ -145,9 +145,9 @@
     }
     { ButtonSheet Button AllButtons
       Name = "ButtonSheet"
-      MoveScaled(19,1,16,4)
+      MoveScaled(19,0,16,4)
       ToolTip = ("Open a example \nbarcode spreadsheet")
-      Text = Shortcut(("Sheet"), "h")
+      Text = Shortcut(("Sheet"), "S")
       Picture = Picture["icon:/22/select-all"]
     }
     { Panel11 Panel
@@ -155,9 +155,9 @@
     }
     { ButtonBreakdown Button AllButtons
       Name = "ButtonBreakdown"
-      MoveScaled(36,1,16,4)
+      MoveScaled(36,0,16,4)
       ToolTip = ("Extra details")
-      Text = Shortcut(("Breakdown"), "B")
+      Text = Shortcut(("Breakdown"), "a")
       Picture = Picture["icon:/22/add"]
     }
     { Panel13 Panel

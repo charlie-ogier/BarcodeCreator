@@ -3,14 +3,14 @@
 Title=BarcodeCreator
 Startup=FMain
 Icon=BarcodeLogo.png
-Version=0.2.0
+Version=0.3.0
 Component=gb.image
 Component=gb.gtk3
 Component=gb.form
 Component=gb.desktop.x11
 Component=gb.desktop
 Component=gb.settings
-Description="Create 128B barcodes, copy the results to a Word Processor or Spreadsheet to print them out. You can read them with a barcode gun or a smart phone.\n\nThe font required is supplied with the program\nUPDATED: -\nNow with an extra 'explanation' form and sample spreadsheet"
+Description="Create 128B barcodes, copy the results to a Word Processor or Spreadsheet to print them out. You can read them with a barcode gun or a smart phone. Includes an extra 'explanation' form and sample spreadsheet.\n\nThe font required is supplied with the program\nUPDATED: -\nMaintenant avec traduction française"
 Authors="Charlie Ogier 2017"
 TabSize=2
 Translate=1

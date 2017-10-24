@@ -11,6 +11,8 @@ Me.Width = Settings["BDWidth", 735]                                           'G
 Me.Height = Settings["BDHeight", 700]                                         'Get the last Form height or set as default
 Me.Center                                                                     'Center the Form
 
+LabelDesc.text = ("Check symbol database")                                    'Add a heading
+
 With GridViewDetails                                                          'Change the properties of the GridView..
   .Columns.count = 10                                                         'Create 10 Columns
   .Rows.count = 5 + Len(sChrs)                                                'Create 5 Rows + the length of the input string

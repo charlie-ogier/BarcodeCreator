@@ -16,7 +16,6 @@
       MoveScaled(9,1,27,3)
       Font = Font["Bold,+1"]
       Expand = True
-      Text = ("Check symbol database")
       Alignment = Align.Bottom
     }
   }
@@ -81,9 +80,9 @@
       Expand = True
     }
     { ButtonDone Button
-      MoveScaled(49,0,11,4)
+      MoveScaled(44,1,16,4)
       ToolTip = ("Bye!")
-      Text = Shortcut(("Done"), "D")
+      Text = Shortcut(("Done"), "e")
       Picture = Picture["icon:/22/apply"]
     }
   }

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: $(PACKAGE) $(VERSION)\n"
-"POT-Creation-Date: 2017-10-23 12:47 UTC\n"
+"POT-Creation-Date: 2017-10-24 12:33 UTC\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,67 +14,67 @@ msgstr ""
 msgid "Breakdown & selecting the 'Check symbol'"
 msgstr ""
 
-#: Breakdown.form:41
-msgid "Check symbol database"
-msgstr ""
-
-#: Breakdown.form:74
+#: Breakdown.form:73
 msgid "="
 msgstr ""
 
-#: Breakdown.form:121
+#: Breakdown.form:120
 msgid "Bye!"
 msgstr ""
 
-#: Breakdown.form:122
+#: Breakdown.form:121
 msgid "Done"
 msgstr ""
 
-#: Breakdown.class:17
+#: Breakdown.class:14
+msgid "Check symbol database"
+msgstr ""
+
+#: Breakdown.class:19
 msgid "128B Start"
 msgstr ""
 
-#: Breakdown.class:25
+#: Breakdown.class:27
 msgid "Character"
 msgstr ""
 
-#: Breakdown.class:29
+#: Breakdown.class:31
 msgid "ASCII value ="
 msgstr ""
 
-#: Breakdown.class:32
+#: Breakdown.class:34
 msgid "less 32 ="
 msgstr ""
 
-#: Breakdown.class:34
+#: Breakdown.class:36
 msgid "multiplied by its position ("
 msgstr ""
 
-#: Breakdown.class:42
+#: Breakdown.class:44
 msgid "Total + 104 ="
 msgstr ""
 
-#: Breakdown.class:44
+#: Breakdown.class:46
 msgid " Mod 103 ="
 msgstr ""
 
-#: Breakdown.class:46
+#: Breakdown.class:48
 msgid "Or  "
 msgstr ""
 
-#: Breakdown.class:47
+#: Breakdown.class:49
 msgid "Check symbol"
 msgstr ""
 
-#: Breakdown.class:48
+#: Breakdown.class:50
 msgid "Character "
 msgstr ""
 
-#: Breakdown.class:48
+#: Breakdown.class:50
 msgid " from the list below ="
 msgstr ""
 
-#: Breakdown.class:51
+#: Breakdown.class:53
 msgid "128B End"
 msgstr ""
 

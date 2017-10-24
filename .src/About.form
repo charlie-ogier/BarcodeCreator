@@ -24,18 +24,17 @@
     MoveScaled(0,52,146,41)
     Background = Color.LightGray
     Expand = True
-    Text = ("This program requires that the font 'code128' be installed. Click on the 'Install Barcode Font' tool bar button to install this font.<p>\nThe font is also available from http://grandzebu.net/informatique/codbar-en/codbar.htm (English) and is included in this program's folder.<p>\nGrand Zebu, the author says \"I will provide you all the software parts... free as usual.!\". Thanks to Grand for this. The font is released under GNU General Public License.<p>\n\nPlease send any comments or bugs to bugs@cogier.com<p>\n\nBarcodeCreator<br>\nCopyright (C) Charlie Ogier 2016 <p>\n\nThis program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.<p>\n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See theGNU General Public License for more details.<p>\n\nA copy of the GNU General Public License is available from the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA\n")
   }
   { HBox1 HBox
-    MoveScaled(124,93,20,5)
+    MoveScaled(115,93,29,5)
     Padding = 2
     { Panel1 Panel
       MoveScaled(3,1,3,2)
       Expand = True
     }
     { ButtonDone Button
-      MoveScaled(8,1,11,3)
-      Text = Shortcut(("Done"), "D")
+      MoveScaled(8,1,16,3)
+      Text = Shortcut(("Done"), "e")
       Picture = Picture["icon:/22/apply"]
     }
   }

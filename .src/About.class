@@ -2,7 +2,8 @@
 
 Public Sub Form_Open()
 
-TextLabel1.text = ("This program allows you to create 128B barcodes upto 20 characters, the longer the code the harder it is to read.<br>") &
+TextLabel1.text = ("With special thanks to Didier Gilles for the French translation") & "<br>" &
+("This program allows you to create 128B barcodes upto 20 characters, the longer the code the harder it is to read.<br>") &
 ("The barcode font size will change If the form is resized. <br> ") &
 ("You need to install the 'code128' font - See below<br>") &
 ("Permitted charaters, including spaces, are: - <br>") &
@@ -21,7 +22,7 @@ TextLabel2.text = ("This program requires that the font 'code128' be installed. 
 ("Grand Zebu, the author says 'I will provide you all the software parts...free As Usual!'. Thanks to Grand for this. The font is released under GNU General Public License.<p>") &
 ("Please send any comments or bugs to bugs@cogier.com<p>") &
 ("BarcodeCreator<br>") &
-("Copyright (C) Charlie Ogier 2016 <p>") &
+("Copyright (C) Charlie Ogier 2017 <p>") &
 ("This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or ('(at your option)any later version. <p>") & 
 ("This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See theGNU General Public License for more details.<p>") &
 ("A copy of the GNU General Public License is available from the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA")
