@@ -2,8 +2,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BarcodeCreator 3.10.0\n"
-"PO-Revision-Date: 2017-10-24 12:28 UTC\n"
-"Last-Translator: charlie <charlie@charlie>\n"
+"POT-Creation-Date: 2017-10-24 12:32 UTC\n"
+"PO-Revision-Date: 2017-10-24 21:47 UTC\n"
+"Last-Translator: root <root@puppypc17350>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -14,8 +15,18 @@ msgid "BarcodeCreator"
 msgstr "BarcodeCreator"
 
 #: .project:2
-msgid "Create 128B barcodes, copy the results to a Word Processor or Spreadsheet to print them out. You can read them with a barcode gun or a smart phone. Includes an extra 'explanation' form and sample spreadsheet.\n\nThe font required is supplied with the program\nUPDATED: -\nMaintenant avec traduction française"
-msgstr "Créez des codes à barres 128B, copiez les résultats dans un traitement de texte ou une feuille de calcul pour les imprimer. Vous pouvez les lire avec un pistolet à code-barres ou un téléphone intelligent. Inclut un formulaire 'explication' supplémentaire et un exemple de feuille de calcul. \n\nLa police requise est fournie avec le programme \nactualisé: -\nMaintenant avec traduction française"
+msgid ""
+"Create 128B barcodes, copy the results to a Word Processor or Spreadsheet to print them out. You can read them with a barcode gun or a smart phone. Includes an extra 'explanation' form and sample spreadsheet.\n"
+"\n"
+"The font required is supplied with the program\n"
+"UPDATED: -\n"
+"Maintenant avec traduction française"
+msgstr ""
+"Créer des codes-barres 128B, copiez les résultats dans un traitement de texte ou une feuille de calcul pour les imprimer. Vous pourrez les lire avec un pistolet à code-barres ou un smart phone. Inclue un formulaire 'explication' supplémentaire et un exemple de feuille de calcul. \n"
+"\n"
+"La fonte requise est fournie avec le programme \n"
+"actualisé: -\n"
+"Maintenant avec traduction française"
 
 #: About.class:18
 msgid " 01 is the location in the store where the item is stored, 'P1725' is the part number and 'FFF' is a hex number of the quantity."
@@ -23,23 +34,23 @@ msgstr "01 est l'emplacement dans le magasin où l'article est stocké, «P1725�
 
 #: About.class:18
 msgid " See the spreadsheet by clicking the 'Sheet' button on the main Form."
-msgstr " Voir la feuille de calcul en cliquant sur le bouton 'Feuille' sur le formulaire principal."
+msgstr " Voir la feuille de calcul en cliquant sur le bouton 'Feuille' du formulaire principal."
 
 #: About.class:18
 msgid " So using a Calc formula ' = Mid(B8, 3, 2) & ' - ' & Mid(B8, 5, 5) & ' - Qty ' & HEX2DEC(Mid(A4, Len(B8) - 4, 3))' the following result can be created."
-msgstr " Donc, en utilisant une formule de Calc ' = Mid(B8, 3, 2) & ' - ' & Mid(B8, 5, 5) & ' - Qté ' & HEX2DEC(Mid(A4, Len(B8) - 4, 3))' le résultat suivant peut être créé."
+msgstr " Donc, en utilisant la formule ' = Mid(B8, 3, 2) & ' - ' & Mid(B8, 5, 5) & ' - Qté ' & HEX2DEC(Mid(A4, Len(B8) - 4, 3))' le résultat suivant sera créé."
 
 #: About.class:18
 msgid " The actual barcode will have 'Start', 'End' and 'Check symbol' characters so will be written as 'ÌK01P1725FFF3Î' but read as 'K01P1725FFF'."
-msgstr " Le code à barres actuel aura les caractères 'Commencer', 'Fin' et 'Vérifier le symbole', ainsi il sera écrit 'ÌK01P1725FFF3Î' mais sera lu comme 'K01P1725FFF'."
+msgstr " Le code-barres actuel a les caractères 'Commencer', 'Fin' et 'Vérifier le symbole', ce qui sera écrit 'ÌK01P1725FFF3Î' mais sera lu comme 'K01P1725FFF'."
 
 #: About.class:18
 msgid " e.g. In LibreOffice Calc once the text is Pasted in a cell change the font to 'code128' increase the font size to about 36,"
-msgstr " Par exemple. Dans LibreOffice Calc, une fois que le texte est collé dans une cellule, changez la police en 'code128' et augmentez la taille de la police à environ 36,"
+msgstr " Par exemple. Dans LibreOffice Calc, une fois que le texte est collé dans une cellule, changez la fonte en 'code128' et augmentez la taille de la fonte à environ 36,"
 
 #: About.class:18
 msgid " resize the cell and centre the contents. You can then print out your code.<p>"
-msgstr " redimensionner la cellule et centrer le contenu. Vous pouvez ensuite imprimer votre code."
+msgstr " redimensionner la cellule et centrer le contenu. Vous pourrez ensuite imprimer votre code."
 
 #: About.class:18
 msgid "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~<br>"
@@ -47,15 +58,15 @@ msgstr "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdef
 
 #: About.class:18
 msgid "Example code For your Widget store 'K01P1725FFF'. The K will tell your Gambas program that it should expect a code of 11 characters,"
-msgstr "Exemple de code Pour votre magasin de widgets 'K01P1725FFF'. Le K indiquera à votre programme Gambas qu'il devrait s'attendre à un code de 11 caractères,"
+msgstr "Exemple de code pour magasin de widgets 'K01P1725FFF'. Le K indique à Gambas qu'il doit recevoir un code de 11 caractères,"
 
 #: About.class:18
 msgid "Permitted charaters, including spaces, are: - <br>"
-msgstr "Les charaters autorisés, y compris les espaces, sont:"
+msgstr "Les caractères autorisés, y compris les espaces, sont:"
 
 #: About.class:18
 msgid "The barcode font size will change If the form is resized. <br> "
-msgstr "La taille de la police du code à barres changera si le formulaire est redimensionné. <br> "
+msgstr "La taille de la fonte du code-barres changera si le formulaire est redimensionné. <br> "
 
 #: About.class:18
 msgid "The barcode text can be copied to the Clipboard and then pasted into a Word Processor or Spreadsheet program as Text."
@@ -63,7 +74,7 @@ msgstr "Le texte du code-barres peut être copié dans le Presse-papiers, puis c
 
 #: About.class:18
 msgid "This program allows you to create 128B barcodes upto 20 characters, the longer the code the harder it is to read.<br>"
-msgstr "Ce programme vous permet de créer des codes à barres de 128B jusqu'à 20 caractères, plus le code est long, plus il est difficile à lire"
+msgstr "Ce programme vous permet de créer du code-barres 128B jusqu'à 20 caractères, plus le code est long, plus il est difficile à lire.<br>"
 
 #: About.class:18
 msgid "With special thanks to Didier Gilles for the French translation"
@@ -71,7 +82,7 @@ msgstr "Un merci spécial à Didier Gilles pour la traduction française"
 
 #: About.class:18
 msgid "You need to install the 'code128' font - See below<br>"
-msgstr "Vous devez installer la police 'code128' - Voir plus bas"
+msgstr "Vous devez installer la fonte 'code128' - Voir plus bas"
 
 #: About.class:28
 msgid "A copy of the GNU General Public License is available from the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA"
@@ -83,31 +94,31 @@ msgstr "BarcodeCreator<br>"
 
 #: About.class:28
 msgid "Copyright (C) Charlie Ogier 2017 <p>"
-msgstr "Droit d'auteur (C) Charlie Ogier 2017 <p>"
+msgstr "Droits d'auteur (C) Charlie Ogier 2017 <p>"
 
 #: About.class:28
 msgid "Grand Zebu, the author says 'I will provide you all the software parts...free As Usual!'. Thanks to Grand for this. The font is released under GNU General Public License.<p>"
-msgstr "Grand Zebu, l'auteur dit 'je vous fournirai toutes les parties du logiciel ... libres comme d'habitude!'. Merci à Grand pour ça. La police est publiée sous GNU General Public License.<p>"
+msgstr "Grand Zebu, l'auteur dit 'je vous fournirai toutes les parties du logiciel ... libres comme d'habitude!'. Merci à lui pour cela. La fonte est publiée sous GNU General Public License.<p>"
 
 #: About.class:28
 msgid "Please send any comments or bugs to bugs@cogier.com<p>"
-msgstr "S'il vous plaît envoyer des commentaires ou des bugs à bugs@cogier.com<p>"
+msgstr "S'il vous plaît envoyer vos commentaires ou bugs à bugs@cogier.com<p>"
 
 #: About.class:28
 msgid "The font is also available from http://grandzebu.net/informatique/codbar-en/codbar.htm (English) and is included in this program's folder.<p>"
-msgstr "La police est également disponible sur http://grandzebu.net/informatique/codbar-en/codbar.htm (en anglais) et est incluse dans le dossier de ce programme.<p>"
+msgstr "La fonte est également disponible sur http://grandzebu.net/informatique/codbar-en/codbar.htm (en anglais) et est incluse dans le dossier de ce programme.<p>"
 
 #: About.class:28
 msgid "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See theGNU General Public License for more details.<p>"
-msgstr "Ce programme est distribué dans l'espoir qu'il sera utile, mais SANS AUCUNE GARANTIE; sans même la garantie implicite de QUALITÉ MARCHANDE ou d'ADÉQUATION À UN USAGE PARTICULIER. Voir la Licence Publique Générale GNU pour plus de détails.<p>"
+msgstr "Ce programme est distribué dans l'espoir qu'il sera utile, mais SANS AUCUNE GARANTIE; Sans même la garantie implicite de QUALITÉ MARCHANDE ou d'ADÉQUATION À UN USAGE PARTICULIER. Voir la Licence Publique Générale GNU pour plus de détails.<p>"
 
 #: About.class:28
 msgid "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or ('(at your option)any later version. <p>"
-msgstr "Ce programme est un logiciel libre; vous pouvez le redistribuer et / ou le modifier selon les termes de la GNU General Public License publiée par la Free Software Foundation; soit la version 2 de la licence, soit ('(à votre choix) toute version ultérieure. <p>"
+msgstr "Ce programme est un logiciel libre; Vous pouvez le redistribuer et/ou le modifier selon les termes de la GNU General Public License publiée par la Free Software Foundation; Soit la version 2 de la licence, ou (selon votre choix) toute version ultérieure. <p>"
 
 #: About.class:28
 msgid "This program requires that the font 'code128' be installed. Click on the 'Install Barcode Font' tool bar button to install this font.<p>"
-msgstr "Ce programme nécessite l'installation de la police 'code128'. Cliquez sur le bouton de la barre d'outils 'Install Barcode Font' pour installer cette police.<p>"
+msgstr "Ce programme nécessite l'installation de la fonte 'code128'. Cliquer sur le bouton de la barre d'outils 'Install Barcode Font' pour installer cette police.<p>"
 
 #: About.form:53 Breakdown.form:121
 msgid "Done"
@@ -115,7 +126,7 @@ msgstr "Terminé"
 
 #: Breakdown.class:14
 msgid "Check symbol database"
-msgstr "Vérifier la base de symboles"
+msgstr "Vérifier la base des symboles"
 
 #: Breakdown.class:19
 msgid "128B Start"
@@ -159,7 +170,7 @@ msgstr " de la liste ci-dessous ="
 
 #: Breakdown.class:50
 msgid "Character "
-msgstr "Caractère"
+msgstr "Caractère "
 
 #: Breakdown.class:53
 msgid "128B End"
@@ -167,7 +178,7 @@ msgstr "128B fin"
 
 #: Breakdown.form:24
 msgid "Breakdown & selecting the 'Check symbol'"
-msgstr "Décomposition et sélection du 'Vérifier le symbole'"
+msgstr "Décomposition et sélection du 'Vérificateur de symbole'"
 
 #: Breakdown.form:73
 msgid "="
@@ -179,11 +190,11 @@ msgstr "Au revoir!"
 
 #: FMain.class:104
 msgid " characters"
-msgstr " caractère"
+msgstr " caractères"
 
 #: FMain.class:105
 msgid "No characters"
-msgstr "Pas de caractères"
+msgstr "Pas de caractère"
 
 #: FMain.class:106
 msgid "1 character"
@@ -199,19 +210,23 @@ msgstr "Continuer"
 
 #: FMain.class:151
 msgid "This will help you install the 'code128' font, the program will close and will need to be restarted after installation"
-msgstr "Cela vous aidera à installer la police 'code128', le programme se fermera et devra être redémarré après l'installation"
+msgstr "Cela vous aidera à installer la fonte 'code128', le programme va se fermer et devra être redémarré après l'installation"
 
 #: FMain.class:154
 msgid "Next"
-msgstr " Prochain"
+msgstr "Suivant"
 
 #: FMain.class:154
 msgid "Use the font tools from your ditribution to install the font"
-msgstr "Utilisez les outils de polices de votre distribution pour installer la police"
+msgstr "Utiliser les outils de fonte de votre distribution pour installer la fonte"
 
 #: FMain.class:154
-msgid "When you click 'Next' an external program should launch and offer you the opportunity to install the 'code128' font.\nIf you run into difficulties you will find the font in your Home folder\n"
-msgstr "Lorsque vous cliquez sur 'Suivant', un programme externe devrait se lancer et vous offrir la possibilité d'installer la police 'code128'. \nSi vous rencontrez des difficultés, vous trouverez la police dans votre dossier Accueil\n"
+msgid ""
+"When you click 'Next' an external program should launch and offer you the opportunity to install the 'code128' font.\n"
+"If you run into difficulties you will find the font in your Home folder\n"
+msgstr ""
+"Lorsque vous cliquez sur 'Suivant', un programme externe va se lancer et offrir la possibilité d'installer la police 'code128'. \n"
+"Si vous rencontrez des difficultés, vous trouverez la police dans le dossier Accueil\n"
 
 #: FMain.form:42
 msgid "128B BarcodeCreator"
@@ -227,41 +242,50 @@ msgstr "Aide et à propos"
 
 #: FMain.form:72
 msgid "Install Barcode Font"
-msgstr "Installer la police de code-barres"
+msgstr "Installer la police de Barcode"
 
 #: FMain.form:88
 msgid "Enter the text for your barcode"
-msgstr "Entrez le texte de votre code à barres"
+msgstr "Entrer le texte à coder"
 
 #: FMain.form:106
-msgid "Permitted charaters, including spaces, are: -\n!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNO\nPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
-msgstr "Les charaters autorisés, y compris les espaces, sont: -\n!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNO\nPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
+msgid ""
+"Permitted charaters, including spaces, are: -\n"
+"!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNO\n"
+"PQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
+msgstr ""
+"Les caratères autorisés, y compris les espaces, sont: -\n"
+"!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNO\n"
+"PQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ "
 
-#: FMain.form:117
+#: FMain.form:118
 msgid "Clear"
-msgstr "Pure"
-
-#: FMain.form:206
-msgid "Copy the barcode text to the clipboard"
-msgstr "Copiez le texte du code-barres dans le presse-papiers"
+msgstr "Nettoyer"
 
 #: FMain.form:207
+msgid "Copy the barcode text to the clipboard"
+msgstr "Copier le texte du code-barres dans le presse-papiers"
+
+#: FMain.form:209
 msgid "Copy"
 msgstr "Copie"
 
-#: FMain.form:218
-msgid "Open a example \nbarcode spreadsheet"
-msgstr "Ouvrir un exemple \nde feuille de calcul de code-barres"
+#: FMain.form:220
+msgid ""
+"Open a example \n"
+"barcode spreadsheet"
+msgstr ""
+"Ouvrir un exemple \n"
+"de feuille de calcul de code-barres"
 
-#: FMain.form:219
+#: FMain.form:222
 msgid "Sheet"
 msgstr "Tableur"
 
-#: FMain.form:230
+#: FMain.form:233
 msgid "Extra details"
 msgstr "Détails supplémentaires"
 
-#: FMain.form:231
+#: FMain.form:235
 msgid "Breakdown"
 msgstr "Détail"
-
